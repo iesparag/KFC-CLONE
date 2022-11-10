@@ -1,0 +1,13 @@
+/* #parag{
+   background-color: black; 
+} */
+/* #navbar {
+    overflow: hidden;
+    
+  } */
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
