@@ -1,3 +1,4 @@
+
 import { Box,GridItem, Image, Text,Flex, HStack,Button } from '@chakra-ui/react'
 import React from 'react'
 import veg from "../Assets/images/veg.svg"
@@ -22,7 +23,7 @@ const SingleCard = ({images,name,type,price,description}) => {
          </Box>
       </GridItem>
     // </Box>
-  )
-}
 
+  )
+  }
 export default SingleCard
