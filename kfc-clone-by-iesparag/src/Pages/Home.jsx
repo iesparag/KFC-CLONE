@@ -18,14 +18,18 @@ import {
   // Input,
   Button,
   Stack,
-  Tab,Tabs,TabList
+  Tab,
+  Tabs,
+  TabList,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+// import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import loader_gif from "../Assets/images/loader_gif.gif";
 import { Link, NavLink } from "react-router-dom";
+import PickUpLocaton from "../Components/PickUpLocaton";
+import VerticalLine from "../Components/VerticalLine";
 
 const browseCategoriesDataFromApi = () => {
   return fetch(`http://localhost:3005/browseCategories`).then((res) =>
@@ -68,7 +72,7 @@ const Home = () => {
   if (isLoading) {
     return (
       <Center>
-        <Image z-index="100" src={loader_gif} />
+        <Image z-index="10" src={loader_gif} />
       </Center>
     );
   }
@@ -76,34 +80,10 @@ const Home = () => {
   return (
     <>
       <Hide below="sm">
-        <Box padding="20px" bg="black">
-          <Center gap={10} color="white">
-            <Box>
-              <LocationOnIcon style={{ color: "#e4002b" }} fontSize="small" />
-              Pick up from: KFC DB City Mall, Bhopal
-            </Box>
-            <Box>
-              <AccessTimeIcon style={{ color: "#e4002b" }} fontSize="small" />
-              ASAP{" "}
-            </Box>
-            <Button
-              color="white"
-              border="white"
-              _hover={{ bg: "#e4002b" }}
-              bg="#e4002b"
-            >
-              Change
-            </Button>
-          </Center>
-        </Box>
-
-        <Box h="50px">
-          <Center gap={3}>
-            <Box w="6px" h="20px" bg="#e4002b"></Box>
-            <Box w="6px" h="20px" bg="#e4002b"></Box>
-            <Box w="6px" h="20px" bg="#e4002b"></Box>
-          </Center>
-        </Box>
+        <PickUpLocaton />
+        <Center>
+          <VerticalLine />
+        </Center>
 
         <Box h="50px">
           <Center gap={3}>
@@ -113,7 +93,7 @@ const Home = () => {
           </Center>
         </Box>
 
-        <Box>
+        <Box mb="50px">
           <Center m="10px" gap={5}>
             <Button>DELIVERY</Button>
             <Button>PICK UP</Button>
@@ -175,11 +155,7 @@ const Home = () => {
       <Hide below="sm">
         <Box p="0 150px">
           <Box h="50px">
-            <HStack spacing="8px">
-              <Box w="6px" h="20px" bg="#e4002b"></Box>
-              <Box w="6px" h="20px" bg="#e4002b"></Box>
-              <Box w="6px" h="20px" bg="#e4002b"></Box>
-            </HStack>
+            <VerticalLine />
           </Box>
           <Box>
             {/* <VStack> */}
@@ -190,34 +166,48 @@ const Home = () => {
           </Box>
         </Box>
       </Hide>
-      <Box p="5% 10% 0">
-        <Heading>BROWSE CATEGORIES</Heading>
+      <Box p="5% 8% 0" mb="50px" mt="50px">
+        <Heading as="h1" size="lg">
+          BROWSE CATEGORIES
+        </Heading>
       </Box>
 
       {/* Browse Categories Start */}
 
       <Grid
         textAlign="center"
+        alignItems="center"
+        justifyContent="center"
         gridTemplateColumns={{
           base: "repeat(1,1fr)",
           sm: "repeat(2,1fr)",
-          md: "repeat(3,1fr)",
-          lg: "repeat(3,1fr)",
+          md: "repeat(2,1fr)",
+          lg: "repeat(4,1fr)",
+          xl: "repeat(4,1fr)",
         }}
-        p="10%"
-        gap={10}
+        m="auto auto"
+        // width="80%"
+        p="0 10%"
+        gap={5}
+        rowGap={10}
+
+       
+        // width={{md:"80%"}}
       >
         {categoriesData?.map((item) => (
-          <GridItem w="250px" boxShadow="base">
+          <GridItem justifyContent="center" height="fit-content"   m="auto auto" borderRadius="8px" key={item.id} w="90%" boxShadow="base">
             <NavLink to={`/${item.cate}`}>
-              <Image src={item.image} />
-              <Heading m="15px auto"  size="md">{item.name}</Heading>
+              <Image w="100%" borderRadius="8px 8px 0 0"  src={item.image} />
+              <Heading m="15px auto" size="sm">
+                {item.name}
+              </Heading>
             </NavLink>
           </GridItem>
         ))}
       </Grid>
 
       {/* Browse Categories end */}
+      <Box h="40px" ></Box>
     </>
   );
 };

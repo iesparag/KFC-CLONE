@@ -16,6 +16,7 @@ import {
   Wrap,
   Stack,
   Input,
+  VStack,
 } from "@chakra-ui/react";
 import {
   Drawer,
@@ -43,6 +44,7 @@ import vfc_logo from "../Assets/images/vfc_logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 
 const Navbar = () => {
   const [size, setSize] = React.useState("");
@@ -55,6 +57,10 @@ const Navbar = () => {
     setSize(newSize);
     onOpen();
   };
+
+  const handleClose = () => {
+    onClose();
+  };
   //  location function
   const handleLocationState = (event) => setLocation(event.target.value);
 
@@ -64,12 +70,12 @@ const Navbar = () => {
   // const sizes = ["full"];
 
   return (
-    <Box >
-      <Box >
+    <Box zIndex={1000}  boxShadow="base" position="sticky" top="0"  >
+      <Box>
         <Hide below="md">
-          <Box>
+          <Box bg="#fff" boxShadow="base">
             <Center>
-              <Flex p="1%" gap={8} alignItems="center">
+              <Flex p="5px 1% 0" gap={8} alignItems="center">
                 <Text>
                   <LocationOnIcon
                     style={{ color: "#e4002b" }}
@@ -82,16 +88,16 @@ const Navbar = () => {
                     onClick={handleLocationFunction}
                     bg="black"
                     color="red"
-                    
+                    _hover={{bg:"#e4002b",color:"white"}}
                   >
                     {location}
                   </Button>
                 ) : (
                   <Button
-                  
                     bg="black"
                     color="white"
                     onClick={handleLocationFunction}
+                    _hover={{bg:"#e4002b",color:"white"}}
                   >
                     Set Location
                   </Button>
@@ -122,12 +128,12 @@ const Navbar = () => {
           </Modal>
         </Hide>
       </Box>
-      <Box bg="white" boxShadow="base" p="0 10%">
+      <Box  bg="white"  p="0 3%">
         <Flex
           // bg="red"
           alignItems="center"
           h="100px"
-          p="10px 20px"
+          p="5px 20px"
           bg="whiteAlpha.900"
           m="0 0"
         >
@@ -148,9 +154,9 @@ const Navbar = () => {
               </Show>
               {/* for small size ... hamburger and all side drawer functionality */}
               {/* hamburger start  */}
-              <Show below="md" >
-                <Hide above="md">
-                  <Box  >
+              <Show below="md">
+                {/* <Hide above="md"> */}
+                  <Box>
                     <button onClick={() => handleClick(size)} key={size} m={4}>
                       {<HamburgerIcon boxSize="1.5em" />}
                     </button>
@@ -163,24 +169,108 @@ const Navbar = () => {
                       <DrawerOverlay />
                       <DrawerContent>
                         <DrawerCloseButton />
-                        <DrawerHeader>{`${size} drawer contents`}</DrawerHeader>
+                        <DrawerHeader
+                          m="-10px 0"
+                          alignItems="center"
+                          boxShadow="base"
+                        >
+                          <Box onClick={onClose}>
+                            <NavLink to="/">
+                              <Image bg="red" width="80px" src={vfc_logo} />
+                            </NavLink>
+                          </Box>
+                          {/* {`${size} drawer contents`} */}
+                        </DrawerHeader>
                         <DrawerBody>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Consequat nisl vel pretium
-                            lectus quam id. Semper quis lectus nulla at volutpat
-                            diam ut venenatis. Dolor morbi non arcu risus quis
-                            varius quam quisque. Massa ultricies mi quis
-                            hendrerit dolor magna eget est lorem. Erat imperdiet
-                            sed euismod nisi porta. Lectus vestibulum mattis
-                            ullamcorper velit.
-                          </p>
+                          <Box>
+                            <Box pt="30px">
+                              <Heading>LET'S GET</Heading>
+                              <Heading>COOKIN'</Heading>
+                            </Box>
+                            <Box onClick={onClose}>
+                              <NavLink to="/login">
+                                <Heading as="h4" size="md" mt="10px">
+                                  <AccountCircleRoundedIcon />
+                                  Sign in / Sign up &#x2192;
+                                </Heading>
+                              </NavLink>
+                            </Box>
+
+                            <Box
+                              onClick={onClose}
+                              boxShadow="base"
+                              p="5%"
+                              margin="40px auto"
+                            >
+                              <NavLink to="/menu">
+                                <Flex
+                                  alignItems="center"
+                                  justifyContent="space-between"
+                                >
+                                  <Heading size="sm">MENU</Heading>
+                                  <Box w="250px" >
+                                    <Image borderRadius="8px"
+                                      src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/md/L-404140.jpg?ver=22.01"
+                                      alt="cate"
+                                    />
+                                  </Box>
+                                </Flex>
+                              </NavLink>
+                            </Box>
+                            <Box
+                              onClick={onClose}
+                              boxShadow="base"
+                              p="5%"
+                              margin="40px auto"
+                            >
+                              <NavLink to="/deals">
+                                <Flex
+                                  alignItems="center"
+                                  justifyContent="space-between"
+                                >
+                                  <Heading size="sm">DEALS</Heading>
+                                  <Box w="250px">
+                                    <Image borderRadius="8px"
+                                      src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/md/L-8000240.jpg?ver=22.01"
+                                      alt="cate"
+                                    />
+                                  </Box>
+                                </Flex>
+                              </NavLink>
+                            </Box>
+                            <Box
+                              onClick={onClose}
+                              boxShadow="base"
+                              p="5%"
+                              margin="40px auto"
+                            >
+                              <VStack
+                                divider={
+                                  <StackDivider borderColor="gray.200" />
+                                }
+                                spacing={4}
+                                align="stretch"
+                              >
+                                <Box h="40px" >
+                                  Get Help
+                                </Box>
+                                <Box h="40px" >
+                                  Contact Us
+                                </Box>
+                                <Box h="40px" >
+                                  VFC Feedback 
+                                </Box>
+                                <Box h="40px" >
+                                  Privacy Policy 
+                                </Box>
+                              </VStack>
+                            </Box>
+                          </Box>
                         </DrawerBody>
                       </DrawerContent>
                     </Drawer>
                   </Box>
-                </Hide>
+                {/* </Hide> */}
               </Show>
               {/* hamburger end */}
             </Flex>

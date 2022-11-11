@@ -11,3 +11,9 @@
     top: 0;
     width: 100%;
   }
+  #nav_main{
+    position: fixed;
+    top: 0;
+    /* box-shadow: dark-lg; */
+
+  }
