@@ -148,47 +148,4 @@ const Menu = () => {
 
 export default Menu;
 
-// <Hide below="md">
-// <Box>
-//   <Center>
-//     <Heading size="lg">KFC MENU</Heading>
-//   </Center>
-// </Box>
-// </Hide>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Hot Deals</NavLink>
-// </Center>
-// </Box>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Chicken Buckets</NavLink>
-// </Center>
-// </Box>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Hot Launches</NavLink>
-// </Center>
-// </Box>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Box Meals</NavLink>
-// </Center>
-// </Box>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Burgers</NavLink>
-// </Center>
-// </Box>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Snack</NavLink>
-// </Center>
-// </Box>
-// <Box h="20px">
-// <Center>
-//   <NavLink to="#">Beverages and Desserts</NavLink>
-// </Center>
-// </Box>
-// </Stack>
-// </Box>
+
