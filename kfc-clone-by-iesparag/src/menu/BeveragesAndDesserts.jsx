@@ -4,12 +4,12 @@ import loader_gif from "../Assets/images/loader_gif.gif";
 import SingleCard from "./SingleCard";
 
 const dealDataFromApi = () => {
-  return fetch(`http://localhost:3005/products?cate=hotDeals`).then((res) =>
+  return fetch(`http://localhost:3005/products?cate=beveragesAndDesserts`).then((res) =>
     res.json()
   );
 };
 
-const HotDeals = () => {
+const BeveragesAndDesserts = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [dealdata, setDealData] = useState([]);
@@ -71,4 +71,4 @@ const HotDeals = () => {
   );
 };
 
-export default HotDeals;
+export default BeveragesAndDesserts;

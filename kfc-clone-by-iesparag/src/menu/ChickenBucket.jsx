@@ -4,12 +4,15 @@ import loader_gif from "../Assets/images/loader_gif.gif";
 import SingleCard from "./SingleCard";
 
 const dealDataFromApi = () => {
-  return fetch(`http://localhost:3005/products?cate=hotDeals`).then((res) =>
+  return fetch(`http://localhost:3005/products?cate=chickenBucket`).then((res) =>
     res.json()
   );
 };
 
-const HotDeals = () => {
+
+
+const ChickenBucket = () => {
+
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [dealdata, setDealData] = useState([]);
@@ -41,7 +44,6 @@ const HotDeals = () => {
       </Center>
     );
   }
-
   return (
     <Box>
       <Grid
@@ -52,8 +54,8 @@ const HotDeals = () => {
           base: "repeat(1,1fr)",
           sm: "repeat(1,1fr)",
           md: "repeat(2,1fr)",
-          lg: "repeat(2,1fr)",
-          xl: "repeat(2,1fr)",
+          lg: "repeat(3,1fr)",
+          xl: "repeat(3,1fr)",
         }}
         m="auto auto"
         // width="80%"
@@ -63,12 +65,19 @@ const HotDeals = () => {
         {
         dealdata?.map((item) => (
           <SingleCard key={item.id} {...item} />
-         
+          //   <GridItem justifyContent="center"   m="auto auto" borderRadius="8px" key={item.id} w="90%" boxShadow="base">
+          //   {/* <Link to="/menu" > */}
+          //     <Image src={item.images} w="100%" borderRadius="8px 8px 0 0"   />
+          //     <Heading m="15px auto" size="sm">
+          //       {item.name}
+          //     </Heading>
+          //   {/* </Link> */}
+          // </GridItem>
         ))}
       </Grid>
       <Box h="40px"></Box>
     </Box>
-  );
-};
+  )
+}
 
-export default HotDeals;
+export default ChickenBucket

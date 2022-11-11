@@ -198,7 +198,7 @@ const Home = () => {
       >
         {categoriesData?.map((item) => (
           <GridItem justifyContent="center" height="fit-content"   m="auto auto" borderRadius="8px" key={item.id} w="90%" boxShadow="base">
-            <NavLink to="/menu">
+            <NavLink to={`/${item.cate}`}>
             {/* <a href={`${item.cate}`}> */}
               <Image w="100%" borderRadius="8px 8px 0 0"  src={item.image} />
               <Heading m="15px auto" size="sm">

@@ -4,12 +4,12 @@ import loader_gif from "../Assets/images/loader_gif.gif";
 import SingleCard from "./SingleCard";
 
 const dealDataFromApi = () => {
-  return fetch(`http://localhost:3005/products?cate=hotDeals`).then((res) =>
+  return fetch(`http://localhost:3005/products?cate=hotLaunches`).then((res) =>
     res.json()
   );
 };
 
-const HotDeals = () => {
+const HotLaunches = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [dealdata, setDealData] = useState([]);
@@ -52,8 +52,8 @@ const HotDeals = () => {
           base: "repeat(1,1fr)",
           sm: "repeat(1,1fr)",
           md: "repeat(2,1fr)",
-          lg: "repeat(2,1fr)",
-          xl: "repeat(2,1fr)",
+          lg: "repeat(3,1fr)",
+          xl: "repeat(3,1fr)",
         }}
         m="auto auto"
         // width="80%"
@@ -71,4 +71,4 @@ const HotDeals = () => {
   );
 };
 
-export default HotDeals;
+export default HotLaunches;

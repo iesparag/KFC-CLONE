@@ -13,11 +13,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import VerticalLine from "../Components/VerticalLine";
+import BeveragesAndDesserts from "../menu/BeveragesAndDesserts";
+import BiryaniBuckets from "../menu/BiryaniBuckets";
+import BoxMeals from "../menu/BoxMeals";
+import Burgers from "../menu/Burgers";
+import ChickenBucket from "../menu/ChickenBucket";
 import HotDeals from "../menu/HotDeals";
+import HotLaunches from "../menu/HotLaunches";
+import Snack from "../menu/Snack";
 
 const Menu = () => {
   return (
-    <Box>
+    <Box >
       <Grid
         gridTemplateColumns={{lg:"1fr 4fr"}}
         justifyContent="center"
@@ -33,12 +40,13 @@ const Menu = () => {
             
             <Flex
               position={{base:"fixed",md:"fixed",lg:"sticky"}}
-              top={{base:"100px",md:"100px",lg:"100px",xl:"100px"}}
+              top={{base:"100px",md:"100px",lg:"0px",xl:"0px"}}
               left="0"
               p="50px"
               // m="auto"
               bg="white"
               gap="20px"
+              // h={{base:"0px"}}
               // mt={{md:"0px"}}
               justifyContent="center"
               alignItems="start"
@@ -71,6 +79,8 @@ const Menu = () => {
               {/* <NavLink to="#">Box Meals</NavLink> */}
             <a href="#burgers">Burgers</a>
 
+            <a href="#biryaniBuckets">Biryani Buckets</a>
+
 
               {/* <NavLink to="#">Burgers</NavLink> */}
             <a href="#snack">Snack</a>
@@ -78,29 +88,57 @@ const Menu = () => {
 
               {/* <NavLink to="#">Snack</NavLink> */}
               
-            <a href="#beveragesAndDesserts">Desserts</a>
+            <a href="#beveragesAndDesserts">Beverages And Desserts</a>
               {/* <NavLink to="#">Desserts</NavLink> */}
+              
             </Flex>
           {/* </Box> */}
         </Box>
 
         {/* right Box */}
-        <Grid   >
-             <Box h="200px"></Box>
+        <Grid m={{base:"210px auto",lg:"auto",xl:"auto"}}  boxShadow="base"  >
+             
              
              <Box   id="hotDeals" >
-                <Heading   as="h1" size="lg">HOT DEALS</Heading>
+                <Heading  m="50px 50px"   as="h1" size="lg">HOT DEALS</Heading>
                 <HotDeals/>
              </Box>
 
              <Box id="chickenBucket" >
-             <Heading   as="h1" size="lg">HOT DEALS</Heading>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laborum excepturi rem pariatur unde ducimus obcaecati natus illo deleniti veritatis ex quibusdam dolore autem consectetur, corrupti aperiam nihil officiis accusantium quidem enim beatae ipsa. Suscipit, fuga tenetur distinctio, ipsa, cupiditate aliquam excepturi alias omnis natus iusto obcaecati asperiores deserunt? Illum laborum nisi sit amet ex nihil maiores, minus tenetur atque nemo incidunt fugit voluptas inventore doloremque autem reprehenderit deserunt? Adipisci ad debitis magni error blanditiis odit rem sit delectus id, atque nobis aliquam inventore possimus ratione praesentium, quia provident similique nihil tenetur animi commodi corrupti sunt. Iusto adipisci odit doloremque delectus autem obcaecati voluptatum illo maiores. Tempora hic quasi alias sit cum aliquid. Odit expedita labore nihil reiciendis incidunt vitae quam facere alias dicta iusto autem impedit ex iste doloribus magni blanditiis officiis fugiat, tempore nemo ab ullam dignissimos. Sunt maiores vitae architecto, asperiores quisquam hic, similique doloribus repudiandae impedit sed saepe. Cupiditate sunt sint, recusandae, voluptatem totam sapiente ratione veniam libero ipsum tempore laborum minus eaque id commodi ipsa assumenda eos laboriosam nam error? Exercitationem dolorum earum ipsa perferendis voluptatum hic nam, omnis aliquid fugit, non, doloribus voluptatem magni? Minima officia et ullam maiores dolorem eos doloribus temporibus consequuntur.</Box>
+             <Heading  m="50px 50px"   as="h1" size="lg">CHICKEN BUCKET</Heading>
+                <ChickenBucket/>
+             </Box>
 
 
 
-             <Box id="hotLaunches">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis illo nisi vero fugit, nam voluptatem aspernatur cumque perferendis veniam accusantium impedit, temporibus sed voluptas necessitatibus. Quis veritatis tempora nostrum, doloribus laboriosam eum mollitia assumenda hic. Reiciendis inventore ad eius recusandae quibusdam cum deleniti mollitia assumenda totam! Est pariatur ea laudantium corporis perferendis, magni modi sunt optio. Excepturi, eligendi. Voluptates, harum voluptatem reprehenderit, minus natus cum delectus repellendus eius nihil esse, ullam laudantium. A laudantium deserunt ullam voluptatem iste possimus atque, fugiat eaque dignissimos veniam sit tempora um, facilis accusantium vitae architecto numquam iusto possimus earum?</Box>
+             <Box id="hotLaunches">
+             <Heading  m="50px 50px"   as="h1" size="lg">HOT LAUNCHES</Heading>
+                <HotLaunches/>
+             </Box>
 
-             <Box id="beveragesAndDesserts">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro commodi, recusandae nisi, harum alias autem earum nobis omnis, eligendi aspernatur labore saepe mollitia adipisci illum dignissimos officia repellat dolores enim pariatur illo. Placeat dignissimos ipsam perferendis facilis voluptas iure commodi, sit obcaecati autem esse fugit modi doloremque? Eveniet magni, modi laudantium illo enim quasi vitae ratione, dolorum laborum doloribus dolore, quae libero voluptate! Perferendis repellat, modi nisi esse, non laboriosam omnis eveniet nesciunt, facere eum adipisci asperiores repellendus quisquam exercitationem eius earum iusto illo. Assumenda necessitatibus illo voluptatibus quis quia corporis labore aperiam veniam cumque? Odio quisquam commodi sapiente odit, </Box>
+             <Box id="boxMeals">
+             <Heading  m="50px 50px"   as="h1" size="lg">BOX MEALS</Heading>
+                <BoxMeals/>
+             </Box>
+
+             <Box id="burgers">
+             <Heading  m="50px 50px"   as="h1" size="lg">BURGERS</Heading>
+                <Burgers/>
+             </Box>
+             <Box id="biryaniBuckets">
+             <Heading  m="50px 50px"   as="h1" size="lg">BIRYANI BUCKET</Heading>
+                <BiryaniBuckets/>
+             </Box>
+
+             <Box id="snack">
+             <Heading  m="50px 50px"   as="h1" size="lg">Snack</Heading>
+                <Snack/>
+             </Box>
+
+             <Box id="beveragesAndDesserts">
+             <Heading  m="50px 50px"   as="h1" size="lg">BEVERAGES AND DESSERTS</Heading>
+                <BeveragesAndDesserts/>
+             </Box>
 
         </Grid>
       </Grid>
