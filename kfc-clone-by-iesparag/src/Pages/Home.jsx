@@ -31,6 +31,7 @@ import { Link, NavLink } from "react-router-dom";
 import PickUpLocaton from "../Components/PickUpLocaton";
 import VerticalLine from "../Components/VerticalLine";
 
+
 const browseCategoriesDataFromApi = () => {
   return fetch(`http://localhost:3005/browseCategories`).then((res) =>
     res.json()
@@ -42,6 +43,7 @@ const Home = () => {
   const [categoriesData, setCategoriesData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+ 
 
   // COROUSEL FUNCTON START
   const handleSelect = (selectedIndex, e) => {
@@ -196,11 +198,13 @@ const Home = () => {
       >
         {categoriesData?.map((item) => (
           <GridItem justifyContent="center" height="fit-content"   m="auto auto" borderRadius="8px" key={item.id} w="90%" boxShadow="base">
-            <NavLink to={`/${item.cate}`}>
+            <NavLink to="/menu">
+            {/* <a href={`${item.cate}`}> */}
               <Image w="100%" borderRadius="8px 8px 0 0"  src={item.image} />
               <Heading m="15px auto" size="sm">
                 {item.name}
               </Heading>
+              {/* </a> */}
             </NavLink>
           </GridItem>
         ))}
