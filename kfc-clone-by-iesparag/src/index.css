@@ -18,3 +18,24 @@ code {
     monospace;
 }
 
+.btn_pill{
+  background-color:#e4002b;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 30px 0px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* a:hover{
+  text-decoration: none;
+  background-color: aqua;
+  cursor: pointer;
+  color: #e4002b;
+} */
+

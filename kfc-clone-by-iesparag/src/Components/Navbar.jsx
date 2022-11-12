@@ -70,7 +70,7 @@ const Navbar = () => {
   // const sizes = ["full"];
 
   return (
-    <Box zIndex={1000}  boxShadow="base" position="sticky" top="0"  >
+    <Box  zIndex={1000}  boxShadow="base" position="sticky" top="0"  >
       <Box>
         <Hide below="md">
           <Box bg="#fff" boxShadow="base">
