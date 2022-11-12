@@ -24,7 +24,7 @@ const Burgers = () => {
     dealDataFromApi()
       .then((res) => {
         setDealData(res);
-        console.log(res);
+        
       })
       .catch((err) => {
         setIsError(true);

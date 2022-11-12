@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import {
   Box,
@@ -45,13 +45,15 @@ import { NavLink, Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import { AuthContext } from "../Context/AuthContext/AuthContext";
+
 
 const Navbar = () => {
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
   const [location, setLocation] = useState("");
-
+  const {authState,loginUser,logoutUser} = useContext(AuthContext)
   // side hamburger function
   const handleClick = (newSize) => {
     setSize(newSize);
@@ -70,8 +72,8 @@ const Navbar = () => {
   // const sizes = ["full"];
 
   return (
-    <Box  zIndex={1000}  boxShadow="base" position="sticky" top="0"  >
-      <Box>
+    <>
+    <Box>
         <Hide below="md">
           <Box bg="#fff" boxShadow="base">
             <Center>
@@ -128,6 +130,8 @@ const Navbar = () => {
           </Modal>
         </Hide>
       </Box>
+    <Box  zIndex={1000}  boxShadow="base" position="sticky" top="0px"  >
+      
       <Box  bg="white"  p="0 3%">
         <Flex
           // bg="red"
@@ -292,7 +296,7 @@ const Navbar = () => {
                 <NavLink to="/login">
                   <Flex alignItems="center" gap={3}>
                     <Image src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg" />
-                    <b>Sign In</b>
+                    <b>{authState.isAuth? <Box onClick={logoutUser}>Sign out</Box> : <Box >Sign In</Box>}</b>
                   </Flex>
                 </NavLink>
               </Hide>
@@ -311,6 +315,7 @@ const Navbar = () => {
         </Flex>
       </Box>
     </Box>
+    </>
   );
 };
 

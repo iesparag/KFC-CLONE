@@ -13,6 +13,8 @@ import Burgers from '../menu/Burgers'
 import BiryaniBuckets from '../menu/BiryaniBuckets'
 import Snack from '../menu/Snack'
 import BeveragesAndDesserts from '../menu/BeveragesAndDesserts'
+import PrivateRoute from '../Components/PrivateRoute'
+
 
 const AllRoutes = () => {
   return (
@@ -21,7 +23,8 @@ const AllRoutes = () => {
         <Route path='/menu' element={<Menu/>} ></Route>
         <Route path='/deals' element={<Deal/>} ></Route>
         <Route path='/login' element={<Login/>} ></Route>
-        <Route path='/cart' element={<Cart/>} ></Route>
+        <Route path='/cart' element={<PrivateRoute><Cart/></PrivateRoute>} ></Route>
+       
     <Route path='/menu/hotDeals' element={<HotDeals/>} ></Route>
     <Route path='/menu/chickenBucket' element={<ChickenBucket/>} ></Route>
     <Route path='/menu/hotLaunches' element={<HotLaunches/>} ></Route>
