@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { FullscreenExitSharp } from "@mui/icons-material";
 import fb from "../Assets/images/fb.png"
 import insta from "../Assets/images/insta.png"
 import twitter from "../Assets/images/twitter.png"

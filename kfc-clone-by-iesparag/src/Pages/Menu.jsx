@@ -8,8 +8,10 @@ import {
   Center,
   Stack,
   Hide,
+  Input,
+  Button
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import VerticalLine from "../Components/VerticalLine";
@@ -22,7 +24,47 @@ import HotDeals from "../menu/HotDeals";
 import HotLaunches from "../menu/HotLaunches";
 import Snack from "../menu/Snack";
 
+// const getData = () => {
+//   return fetch(`http://localhost:3005/products`).then((res)=> res.json())
+// }
+
 const Menu = () => {
+  // const [item,getItem] = useState([])
+  // const [isLoading,setIsLoading] = useState(false)
+  // const [inp,setInp] = useState("")
+  // const [searchdata,setSearchData] = useState([])
+
+  // useEffect(()=>{
+  //   getdatafromback()
+  // },[])
+
+  // // console.log(item);
+
+  // const getdatafromback = () => {
+  //   setIsLoading(true)
+  //    getData().then((res)=>{
+  //     getItem(res)
+  //    }).catch((err)=>{
+  //     console.log(err);
+  //    }).finally(()=>{
+  //     setIsLoading(false)
+  //    })
+  // } 
+
+  // {
+  //   const lg_gye = getItem.filter((el)=> ((el.name).toLowerCase()).includes(inp.toLowerCase()) )
+  //      setSearchData(lg_gye)
+  // }
+  
+  // handleSearch()
+//   const handleSearch = ()=> {
+       
+
+//   }
+// console.log(inp)
+//   console.log(searchdata)
+
+
   return (
     <Box >
       <Grid
@@ -40,7 +82,7 @@ const Menu = () => {
             
             <Flex
               position={{base:"fixed",md:"fixed",lg:"sticky"}}
-              top={{base:"100px",md:"100px",lg:"0px",xl:"0px"}}
+              top={{base:"100px",md:"100px",lg:"50px",xl:"50px"}}
               left="0"
               p="50px"
               // m="auto"
@@ -97,8 +139,10 @@ const Menu = () => {
 
         {/* right Box */}
         <Grid m={{base:"210px auto",lg:"auto",xl:"auto"}}  boxShadow="base"  >
-             
-             
+
+          {/* search box */}
+             {/* <Box alignItems="center"><Input value={inp} onChange={(e)=> setInp(e.target.value)} focusBorderColor="#e4002b" m="20px 0px 20px 50px " w="30%" placeholder="search Here" /><Button bg="#e4002b"  color="white" onClick={handleSearch}>Search</Button></Box> */}
+            
              <Box   id="hotDeals" >
                 <Heading  m="50px 50px"   as="h1" size="lg">HOT DEALS</Heading>
                 <HotDeals/>

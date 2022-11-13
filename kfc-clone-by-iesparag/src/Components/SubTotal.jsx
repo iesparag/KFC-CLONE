@@ -5,13 +5,14 @@ import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../Context/CartContext/reducer";
 import { CartContext } from "../Context/CartContext/CartContext";
 import { Box, Heading } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 
 const SubTotal = () => {
   const {state,dispatch} = useContext(CartContext)
   
   return (
-    <Box  className="subtotal">
+    <Box position={{lg:"sticky",xl:"sticky"}} top={{lg:"50vh"}}  className="subtotal">
       {/* price */}
       <CurrencyFormat
         renderText={(value) => (
@@ -32,7 +33,7 @@ const SubTotal = () => {
       />
        <hr />
 
-      <button className="btn_pill">Proceed to Checkout</button>
+      <NavLink to="/payment"><button className="btn_pill">Proceed to Checkout</button></NavLink>
     </Box>
   );
 };

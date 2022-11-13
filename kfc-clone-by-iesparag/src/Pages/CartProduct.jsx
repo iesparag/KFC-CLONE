@@ -8,7 +8,7 @@ const CartProduct = ({ id, name, images, price, type }) => {
 
   return (
     <Box m="40px auto" gap={50} display={{base:"block",sm:"block",md:"flex",lg:"flex",xl:"flex"}}     className="checkoutProduct">
-      <Image w={{base:"70%",md:"50%"}} className="checkoutProduct__image" src={images} alt="" />
+      <Image w={{base:"70%",md:"30%"}} className="checkoutProduct__image" src={images} alt="" />
 
       <Box    className="checkoutProduct__info">
         <Box>

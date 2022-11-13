@@ -46,6 +46,8 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import { AuthContext } from "../Context/AuthContext/AuthContext";
+import { CartContext } from "../Context/CartContext/CartContext";
+
 
 
 const Navbar = () => {
@@ -54,11 +56,13 @@ const Navbar = () => {
   const [placement, setPlacement] = React.useState("left");
   const [location, setLocation] = useState("");
   const {authState,loginUser,logoutUser} = useContext(AuthContext)
+  const {state} =useContext(CartContext)
   // side hamburger function
   const handleClick = (newSize) => {
     setSize(newSize);
     onOpen();
   };
+ 
 
   const handleClose = () => {
     onClose();
@@ -73,7 +77,7 @@ const Navbar = () => {
 
   return (
     <>
-    <Box>
+    <Box >
         <Hide below="md">
           <Box bg="#fff" boxShadow="base">
             <Center>
@@ -130,7 +134,7 @@ const Navbar = () => {
           </Modal>
         </Hide>
       </Box>
-    <Box  zIndex={1000}  boxShadow="base" position="sticky" top="0px"  >
+    <Box   zIndex={1000}  boxShadow="base" position="sticky" top="0px"  >
       
       <Box  bg="white"  p="0 3%">
         <Flex
@@ -302,12 +306,12 @@ const Navbar = () => {
               </Hide>
 
               <NavLink to="/cart">
-                <Flex alignItems="center" gap={3}>
+                <Flex alignItems="center" gap={0}>
                   <Image
                     width="50px"
                     src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"
                   />
-                  <b>₹0</b>
+                   <b >{state.basket.length}</b>
                 </Flex>
               </NavLink>
             </Flex>

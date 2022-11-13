@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import vfc_logo from "../Assets/images/vfc_logo.png";
 import { AuthContext } from "../Context/AuthContext/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Text, useToast } from '@chakra-ui/react'
 import {
   Box,
   Center,
@@ -22,7 +23,7 @@ import { EmailIcon } from "@chakra-ui/icons";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const toast = useToast()
   const [loading, setLoading] = useState(false);
   const { loginUser, authState } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -40,6 +41,14 @@ const Login = () => {
       .then((res) => res.json())
       .then((res) => {
         if (res.token) {
+          toast({
+            position:"top",
+            title: 'Account created.',
+            description: "We've created your account for you.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
           loginUser(res.token);
           navigate("/");
         }
