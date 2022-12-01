@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 const dealDataFromApi = () => {
-  return fetch(`http://localhost:3005/products?cate=hotDeals`).then((res) => res.json());
+  return fetch(`https://vfc-database.vercel.app/products?cate=hotDeals`).then((res) => res.json());
 };
 
 

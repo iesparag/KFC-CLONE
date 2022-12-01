@@ -9,7 +9,8 @@ import {
   Stack,
   Hide,
   Input,
-  Button
+  Button,
+  Show
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -73,16 +74,17 @@ const Menu = () => {
         margin="auto"
        
       >
+        <Hide below="lg" >
         <Box 
         // bg="yellow"
         // position="sticky"
         // top="0"
         >
          
-            
+             
             <Flex
-              position={{base:"fixed",md:"fixed",lg:"sticky"}}
-              top={{base:"100px",md:"100px",lg:"50px",xl:"50px"}}
+              position={{md:"sticky",lg:"sticky"}}
+              top={{md:"100px",lg:"50px",xl:"50px"}}
               left="0"
               p="50px"
               // m="auto"
@@ -100,14 +102,14 @@ const Menu = () => {
              width={{base:"100%",md:"100%"}}
               
             >
-              <Hide below="md">
+             
               <Box >
               
                 <VerticalLine />
                 <Heading mb="10px" size="lg">KFC MENU</Heading>
               
               </Box>
-            </Hide>
+           
             <a href="#hotDeals">Hot Deals</a>
               {/* <NavLink to="#hotDeals">Hot Deals</NavLink> */}
             <a  href="#chickenBucket">Chicken Buckets</a>
@@ -136,9 +138,10 @@ const Menu = () => {
             </Flex>
           {/* </Box> */}
         </Box>
+        </Hide>
 
         {/* right Box */}
-        <Grid m={{base:"210px auto",lg:"auto",xl:"auto"}}  boxShadow="base"  >
+        <Grid m="50px"  boxShadow="base"  >
 
           {/* search box */}
              {/* <Box alignItems="center"><Input value={inp} onChange={(e)=> setInp(e.target.value)} focusBorderColor="#e4002b" m="20px 0px 20px 50px " w="30%" placeholder="search Here" /><Button bg="#e4002b"  color="white" onClick={handleSearch}>Search</Button></Box> */}

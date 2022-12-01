@@ -4,7 +4,7 @@ import loader_gif from "../Assets/images/loader_gif.gif";
 import SingleCard from "./SingleCard";
 
 const dealDataFromApi = () => {
-  return fetch(`http://localhost:3005/products?cate=chickenBucket`).then((res) =>
+  return fetch(`https://vfc-database.vercel.app/products?cate=chickenBucket`).then((res) =>
     res.json()
   );
 };

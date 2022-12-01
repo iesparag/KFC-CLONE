@@ -33,7 +33,7 @@ import VerticalLine from "../Components/VerticalLine";
 
 
 const browseCategoriesDataFromApi = () => {
-  return fetch(`http://localhost:3005/browseCategories`).then((res) =>
+  return fetch(`https://vfc-database.vercel.app/browseCategories`).then((res) =>
     res.json()
   );
 };
