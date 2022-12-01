@@ -45,7 +45,7 @@ const Burgers = () => {
   return (
     <Box>
       <Grid
-        // textAlign="center"
+        // pt={{base:"100px",md:"200px"}}
         alignItems="center"
         justifyContent="center"
         gridTemplateColumns={{

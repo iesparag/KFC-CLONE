@@ -67,7 +67,7 @@ const Menu = () => {
 
 
   return (
-    <Box >
+    <Box  >
       <Grid
         gridTemplateColumns={{lg:"1fr 4fr"}}
         justifyContent="center"
@@ -141,48 +141,48 @@ const Menu = () => {
         </Hide>
 
         {/* right Box */}
-        <Grid m="50px"  boxShadow="base"  >
+        <Grid  mb="50px"  boxShadow="base"  >
 
           {/* search box */}
              {/* <Box alignItems="center"><Input value={inp} onChange={(e)=> setInp(e.target.value)} focusBorderColor="#e4002b" m="20px 0px 20px 50px " w="30%" placeholder="search Here" /><Button bg="#e4002b"  color="white" onClick={handleSearch}>Search</Button></Box> */}
             
-             <Box   id="hotDeals" >
+             <Box pt={{base:"10px",md:"110px"}}   id="hotDeals" >
                 <Heading  m="50px 50px"   as="h1" size="lg">HOT DEALS</Heading>
                 <HotDeals/>
              </Box>
 
-             <Box id="chickenBucket" >
+             <Box pt={{base:"10px",md:"110px"}} id="chickenBucket" >
              <Heading  m="50px 50px"   as="h1" size="lg">CHICKEN BUCKET</Heading>
                 <ChickenBucket/>
              </Box>
 
 
 
-             <Box id="hotLaunches">
+             <Box pt={{base:"10px",md:"110px"}} id="hotLaunches">
              <Heading  m="50px 50px"   as="h1" size="lg">HOT LAUNCHES</Heading>
                 <HotLaunches/>
              </Box>
 
-             <Box id="boxMeals">
+             <Box pt={{base:"10px",md:"110px"}} id="boxMeals">
              <Heading  m="50px 50px"   as="h1" size="lg">BOX MEALS</Heading>
                 <BoxMeals/>
              </Box>
 
-             <Box id="burgers">
+             <Box pt={{base:"10px",md:"110px"}} id="burgers">
              <Heading  m="50px 50px"   as="h1" size="lg">BURGERS</Heading>
                 <Burgers/>
              </Box>
-             <Box id="biryaniBuckets">
+             <Box pt={{base:"10px",md:"110px"}} id="biryaniBuckets">
              <Heading  m="50px 50px"   as="h1" size="lg">BIRYANI BUCKET</Heading>
                 <BiryaniBuckets/>
              </Box>
 
-             <Box id="snack">
+             <Box pt={{base:"10px",md:"110px"}} id="snack">
              <Heading  m="50px 50px"   as="h1" size="lg">Snack</Heading>
                 <Snack/>
              </Box>
 
-             <Box id="beveragesAndDesserts">
+             <Box pt={{base:"10px",md:"110px"}} id="beveragesAndDesserts">
              <Heading  m="50px 50px"   as="h1" size="lg">BEVERAGES AND DESSERTS</Heading>
                 <BeveragesAndDesserts/>
              </Box>
