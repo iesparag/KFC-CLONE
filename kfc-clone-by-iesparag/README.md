@@ -45,15 +45,15 @@ KFC is a global chicken restaurant brand with a rich, decades-long history of su
 - COD
 
 #### Website Presentation :
-![KFC-webite](./Assets/readme/allcategory.png)
+![KFC-webite](../Assets/readme/allcategory.png)
 
-![KFC-webite](/Assets/readme/menu.png)
+![KFC-webite](../Assets/readme/menu.png)
 
-![KFC-webite](/Assets/readme/login.png)
+![KFC-webite](../Assets/readme/login.png)
 
-![KFC-webite](/Assets/readme/cart.png)
+![KFC-webite](../Assets/readme/cart.png)
 
-![KFC-webite](/Assets/readme/payment.png)
+![KFC-webite](../Assets/readme/payment.png)
 ## Thank you note
 Thank you all who is giving precious time to visit my little creative project which is made with lot of efforts.
 
