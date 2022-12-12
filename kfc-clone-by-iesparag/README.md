@@ -1,4 +1,4 @@
-# rentomojo clone ( Individual Project )
+# KFC clone ( Individual Project )
 
 # https://kfc-clone-by-iesparag.vercel.app/
 
