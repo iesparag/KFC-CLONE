@@ -1,73 +1,60 @@
+# rentomojo clone ( Individual Project )
+
 # https://kfc-clone-by-iesparag.vercel.app/
 
+KFC is a global chicken restaurant brand with a rich, decades-long history of success and innovation. It all started with one cook, Colonel Harland Sanders, who created a finger lickin' good recipe more than 75 years ago
 
-# Getting Started with Create React App
+## Deployed link of project
+- <a href="https://kfc-clone-by-iesparag.vercel.app/">KFC (Clone)</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🛠 Tech Stack
 
-## Available Scripts
+- React
+- Chakra-UI
+- Boothstrap
+- Material UI
+- CSS
+- backend (vercel)
 
-In the project directory, you can run:
+## Functionality
 
-### `npm start`
+- Login  ( E-mail: "eve.holt@reqres.in" && Password: "citysilica" )
+- Authentication
+- Add to cart
+- Payment Page with Discount Functionality
+- Checkout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Website flow for User
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Home page
 
-### `npm test`
+- Category wise products
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Menu page(List of all the Items)
 
-### `npm run build`
+- Cart page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Address page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Payment page , One Time Password verification page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+    
+#### Hard Coded Card details for payment section
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- COD
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Website Presentation :
+![KFC-webite](/Assets/readme/allcategory.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![KFC-webite](/Assets/readme/menu.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![KFC-webite](/Assets/readme/login.png)
 
-## Learn More
+![KFC-webite](/Assets/readme/cart.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![KFC-webite](/Assets/readme/payment.png)
+## Thank you note
+Thank you all who is giving precious time to visit my little creative project which is made with lot of efforts.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_<p align="center"><sub>- Readme file designed by <a href="https://github.com/iesparag">Parag Jain</a> -</sub></p>_
