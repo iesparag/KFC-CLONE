@@ -43,7 +43,9 @@ const Burgers = () => {
   }
 
   return (
-    <Box>
+    <Box pt={{ base: "10px", md: "100px" }}>
+             <Heading  m="10px 50px 20px"   as="h1" size="lg">BURGERS</Heading>
+
       <Grid
         // pt={{base:"100px",md:"200px"}}
         alignItems="center"

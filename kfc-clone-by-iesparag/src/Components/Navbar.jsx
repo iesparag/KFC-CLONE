@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import {
   Box,
@@ -29,6 +29,7 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
+import { Search2Icon } from '@chakra-ui/icons'
 
 import {
   Modal,
@@ -41,7 +42,7 @@ import {
 } from "@chakra-ui/react";
 
 import vfc_logo from "../Assets/images/vfc_logo.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, Navigate, useNavigate } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
@@ -49,6 +50,9 @@ import { AuthContext } from "../Context/AuthContext/AuthContext";
 import { CartContext } from "../Context/CartContext/CartContext";
 
 
+const getData = () => {
+  return fetch(`https://vfc-database.vercel.app/products`).then((res)=> res.json())
+}
 
 const Navbar = () => {
   const [size, setSize] = React.useState("");
@@ -56,7 +60,29 @@ const Navbar = () => {
   const [placement, setPlacement] = React.useState("left");
   const [location, setLocation] = useState("");
   const {authState,loginUser,logoutUser} = useContext(AuthContext)
-  const {state} =useContext(CartContext)
+  const { state } = useContext(CartContext)
+    const [item,SetItem] = useState([])
+  const [isLoading,setIsLoading] = useState(false)
+  const [inp,setInp] = useState("")
+  const [searchdata, setSearchData] = useState([])
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    getdatafromback()
+  },[])
+
+  console.log(inp);
+
+  const getdatafromback = () => {
+    setIsLoading(true)
+     getData().then((res)=>{
+      SetItem(res)
+     }).catch((err)=>{
+      console.log(err);
+     }).finally(()=>{
+      setIsLoading(false)
+     })
+  } 
   // side hamburger function
   const handleClick = (newSize) => {
     setSize(newSize);
@@ -74,6 +100,29 @@ const Navbar = () => {
     onOpen();
   };
   // const sizes = ["full"];
+// search function
+  const handleSearch = (e) => {
+    e.preventDefault()
+    setInp(e.target.value)
+    // console.log("aaaaaaaagaye")
+     const lg_gye = item?.filter((el) => {
+         return ((el.description
+).toLowerCase()).includes(inp.toLowerCase()) || ((el.name
+).toLowerCase()).includes(inp.toLowerCase())
+    })
+
+    // setSearchData(lg_gye)
+    navigate("/searchpage", {
+      state: {
+      lg_gye
+    }})
+    
+  console.log(lg_gye)
+    // setInp("")
+          
+  }
+
+  console.log(searchdata)
 
   return (
     <>
@@ -284,14 +333,19 @@ const Navbar = () => {
             </Flex>
           </Box>
           <Spacer />
-          <Box>
-            <Show below="md">
+            <Box flexGrow={2} px="20px">
+              <Box m="auto" alignItems="center" display="flex" position="sticky" top="160px" gap={1}><Input borderRadius="10px" size={{ xs: "xs", sm: "sm", md: "md", lg: "lg" }} borderColor="#e4002b" border="2px solid #e4002b" bg="white" value={inp} onMouseEnter={handleSearch} focusBorderColor="#e4002b" onChange={ handleSearch}
+            placeholder="search Here" />
+            {/* <Button bg="#e4002b" size={{xs:"xs",sm:"sm",md:"md",lg:"lg"}} 
+            _hover={{bg:"#e4002b",color:"white"}}  color="white" onClick={handleSearch}><Search2Icon/></Button> */}
+          </Box>
+            {/* <Show below="md">
               <Hide above="md" below="sm">
                 <NavLink to="/">
                   <Image width="100px" src={vfc_logo} />
                 </NavLink>
               </Hide>
-            </Show>
+            </Show> */}
           </Box>
           <Spacer />
           <Box>

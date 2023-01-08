@@ -43,7 +43,9 @@ const HotLaunches = () => {
   }
 
   return (
-    <Box>
+    <Box pt={{ base: "10px", md: "100px" }}>
+             <Heading  m="10px 50px 20px"   as="h1" size="lg">HOT LAUNCHES</Heading>
+
       <Grid
         // textAlign="center"
         alignItems="center"
