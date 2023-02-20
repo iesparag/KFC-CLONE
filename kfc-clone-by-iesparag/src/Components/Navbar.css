@@ -17,3 +17,11 @@
     /* box-shadow: dark-lg; */
 
   }
+
+  Link:hover{
+  color: #e4002b;
+  }
+
+  b:hover{
+    color: #e4002b;
+    }

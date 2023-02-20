@@ -30,6 +30,9 @@ const reducer = (state, action) => {
 
         return { ...state, basket: newBasket }
         break;
+        case "resetCart":
+            return{...state,basket:[]}
+            break;
         default:
             return state;
     }

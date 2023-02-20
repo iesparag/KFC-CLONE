@@ -120,29 +120,29 @@ const Menu = () => {
               
               </Box>
            
-            <Link to="hotDeals" activeClass="active" duration={3000} spy={true} smooth={true}>Hot Deals</Link>
+            <Link to="hotDeals" activeClass="active" duration={2000} spy={true} smooth={true}>Hot Deals</Link>
               {/* <NavLink to="#hotDeals">Hot Deals</NavLink> */}
-            <Link  to="chickenBucket" activeClass="active" duration={3000} spy={true} smooth={true}>Chicken Buckets</Link>
+            <Link  to="chickenBucket" activeClass="active" duration={2000} spy={true} smooth={true}>Chicken Buckets</Link>
              
               {/* <NavLink to="#chickenBucket">Chicken Buckets</NavLink> */}
-            <Link to="hotLaunches" activeClass="active" duration={3000} spy={true} smooth={true}>Hot Launches</Link>
+            <Link to="hotLaunches" activeClass="active" duration={2000} spy={true} smooth={true}>Hot Launches</Link>
              
               {/* <NavLink to="#">Hot Launches</NavLink> */}
-            <Link to="boxMeals" activeClass="active" duration={3000} spy={true} smooth={true}>Box Meals</Link>
+            <Link to="boxMeals" activeClass="active" duration={2000} spy={true} smooth={true}>Box Meals</Link>
               
               {/* <NavLink to="#">Box Meals</NavLink> */}
-            <Link to="burgers" activeClass="active" duration={3000} spy={true} smooth={true}>Burgers</Link>
+            <Link to="burgers" activeClass="active" duration={2000} spy={true} smooth={true}>Burgers</Link>
 
-            <Link to="biryaniBuckets" activeClass="active" duration={3000} spy={true} smooth={true}>Biryani Buckets</Link>
+            <Link to="biryaniBuckets" activeClass="active" duration={2000} spy={true} smooth={true}>Biryani Buckets</Link>
 
 
               {/* <NavLink to="#">Burgers</NavLink> */}
-            <Link to="snack" activeClass="active" duration={3000} spy={true} smooth={true}>Snack</Link>
+            <Link to="snack" activeClass="active" duration={2000} spy={true} smooth={true}>Snack</Link>
 
 
               {/* <NavLink to="#">Snack</NavLink> */}
               
-            <Link to="beveragesAndDesserts" activeClass="active" duration={3000} spy={true} smooth={true}>Beverages And Desserts</Link>
+            <Link to="beveragesAndDesserts" activeClass="active" duration={2000} spy={true} smooth={true}>Beverages And Desserts</Link>
               {/* <NavLink to="#">Desserts</NavLink> */}
               
             </Flex>

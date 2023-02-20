@@ -16,6 +16,7 @@ import BeveragesAndDesserts from "../menu/BeveragesAndDesserts";
 import PrivateRoute from "../Components/PrivateRoute";
 import Payment from "../Pages/Payment";
 import SearchPage from "../Pages/SearchPage";
+import Signup from './../Pages/Signup';
 
 
 const AllRoutes = () => {
@@ -25,13 +26,14 @@ const AllRoutes = () => {
       <Route path="/menu" element={<Menu />}></Route>
       <Route path="/deals" element={<Deal />}></Route>
       <Route path="/login" element={<Login />}></Route>
+      <Route path="/signup" element={<Signup />}></Route>
       <Route path="/searchpage" element={<SearchPage/>}></Route>
       <Route
         path="/payment"
         element={
           <PrivateRoute>
             <Payment />
-          </PrivateRoute>
+           </PrivateRoute>
         }
       ></Route>
       <Route
@@ -39,7 +41,7 @@ const AllRoutes = () => {
         element={
           <PrivateRoute>
             <Cart />
-          </PrivateRoute>
+           </PrivateRoute>
         }
       ></Route>
 

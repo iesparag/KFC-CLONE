@@ -17,6 +17,7 @@ import {
   Stack,
   Input,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
 import {
   Drawer,
@@ -42,34 +43,54 @@ import {
 } from "@chakra-ui/react";
 
 import vfc_logo from "../Assets/images/vfc_logo.png";
-import { NavLink, Link, Navigate, useNavigate } from "react-router-dom";
+import {  Link,  useNavigate } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import { AuthContext } from "../Context/AuthContext/AuthContext";
+// import { AuthContext } from "../Context/AuthContext/AuthContext";
 import { CartContext } from "../Context/CartContext/CartContext";
 
+import { logout } from "../Redux/LoginRedux/Login.Actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const getData = () => {
   return fetch(`https://vfc-database.vercel.app/products`).then((res)=> res.json())
 }
 
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const toast = useToast()
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
   const [location, setLocation] = useState("");
-  const {authState,loginUser,logoutUser} = useContext(AuthContext)
   const { state } = useContext(CartContext)
     const [item,SetItem] = useState([])
   const [isLoading,setIsLoading] = useState(false)
   const [inp,setInp] = useState("")
   const [searchdata, setSearchData] = useState([])
+  const { isAuth,email } = useSelector((state) => state.login);
+
   const navigate = useNavigate()
 
   useEffect(()=>{
     getdatafromback()
-  },[])
+  },[isAuth, dispatch,email])
+
+  const handleLogout = () => {
+    dispatch(logout()).then(() => {
+      toast({
+        title: "User Logged out .",
+        description: "Visit again",
+        status: "success",
+        duration: 4000,
+        position: "top-right",
+        isClosable: true,
+      });
+      return navigate("/login");
+    });
+    
+  };
 
   console.log(inp);
 
@@ -198,15 +219,15 @@ const Navbar = () => {
             <Flex gap={8} alignItems="center">
               <Show above="md">
                 <Hide below="md">
-                  <NavLink to="/">
+                  <Link to="/">
                     <Image width="100px" src={vfc_logo} />
-                  </NavLink>
-                  <NavLink to="/menu">
+                  </Link>
+                  <Link to="/menu">
                     <b fo>Menu</b>
-                  </NavLink>
-                  <NavLink to="/deals">
+                  </Link>
+                  <Link to="/deals">
                     <b>Deals</b>
-                  </NavLink>
+                  </Link>
                 </Hide>
               </Show>
               {/* for small size ... hamburger and all side drawer functionality */}
@@ -232,9 +253,9 @@ const Navbar = () => {
                           boxShadow="base"
                         >
                           <Box onClick={onClose}>
-                            <NavLink to="/">
+                            <Link to="/">
                               <Image bg="red" width="80px" src={vfc_logo} />
-                            </NavLink>
+                            </Link>
                           </Box>
                           {/* {`${size} drawer contents`} */}
                         </DrawerHeader>
@@ -245,12 +266,12 @@ const Navbar = () => {
                               <Heading>COOKIN'</Heading>
                             </Box>
                             <Box onClick={onClose}>
-                              <NavLink to="/login">
+                              <Link to="/login">
                                 <Heading as="h4" size="md" mt="10px">
                                   <AccountCircleRoundedIcon />
                                   Sign in / Sign up &#x2192;
                                 </Heading>
-                              </NavLink>
+                              </Link>
                             </Box>
 
                             <Box
@@ -259,7 +280,7 @@ const Navbar = () => {
                               p="5%"
                               margin="40px auto"
                             >
-                              <NavLink to="/menu">
+                              <Link to="/menu">
                                 <Flex
                                   alignItems="center"
                                   justifyContent="space-between"
@@ -272,7 +293,7 @@ const Navbar = () => {
                                     />
                                   </Box>
                                 </Flex>
-                              </NavLink>
+                              </Link>
                             </Box>
                             <Box
                               onClick={onClose}
@@ -280,7 +301,7 @@ const Navbar = () => {
                               p="5%"
                               margin="40px auto"
                             >
-                              <NavLink to="/deals">
+                              <Link to="/deals">
                                 <Flex
                                   alignItems="center"
                                   justifyContent="space-between"
@@ -293,7 +314,7 @@ const Navbar = () => {
                                     />
                                   </Box>
                                 </Flex>
-                              </NavLink>
+                              </Link>
                             </Box>
                             <Box
                               onClick={onClose}
@@ -334,16 +355,17 @@ const Navbar = () => {
           </Box>
           <Spacer />
             <Box flexGrow={2} px="20px">
-              <Box m="auto" alignItems="center" display="flex" position="sticky" top="160px" gap={1}><Input borderRadius="10px" size={{ xs: "xs", sm: "sm", md: "md", lg: "lg" }} borderColor="#e4002b" border="2px solid #e4002b" bg="white" value={inp} onMouseEnter={handleSearch} focusBorderColor="#e4002b" onChange={ handleSearch}
+              <Box m="auto" alignItems="center" display="flex" position="sticky" top="160px" gap={1}><Input borderRadius="10px" size={{ xs: "xs", sm: "sm", md: "md", lg: "lg" }} borderColor="#e4002b" border="2px solid #e4002b" bg="white" value={inp}  focusBorderColor="#e4002b" onChange={ handleSearch}
             placeholder="search Here" />
+            {/* onMouseEnter={handleSearch} */}
             {/* <Button bg="#e4002b" size={{xs:"xs",sm:"sm",md:"md",lg:"lg"}} 
             _hover={{bg:"#e4002b",color:"white"}}  color="white" onClick={handleSearch}><Search2Icon/></Button> */}
           </Box>
             {/* <Show below="md">
               <Hide above="md" below="sm">
-                <NavLink to="/">
+                <Link to="/">
                   <Image width="100px" src={vfc_logo} />
-                </NavLink>
+                </Link>
               </Hide>
             </Show> */}
           </Box>
@@ -351,15 +373,18 @@ const Navbar = () => {
           <Box>
             <Flex gap={8} alignItems="center">
               <Hide below="md">
-                <NavLink to="/login">
+                <Box>
+                  <p>{email}</p>
+                <Link to={!isAuth && "/login"}>
                   <Flex alignItems="center" gap={3}>
                     <Image src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg" />
-                    <b>{authState.isAuth? <Box onClick={logoutUser}>Sign out</Box> : <Box >Sign In</Box>}</b>
+                    <b>{isAuth? <Box onClick={handleLogout}>Sign out</Box> : <Box >Sign In</Box>}</b>
                   </Flex>
-                </NavLink>
+                </Link>
+                </Box>
               </Hide>
 
-              <NavLink to="/cart">
+              <Link to="/cart">
                 <Flex alignItems="center" gap={0}>
                   <Image
                     width="50px"
@@ -367,7 +392,7 @@ const Navbar = () => {
                   />
                    <b >{state.basket.length}</b>
                 </Flex>
-              </NavLink>
+              </Link>
             </Flex>
           </Box>
         </Flex>

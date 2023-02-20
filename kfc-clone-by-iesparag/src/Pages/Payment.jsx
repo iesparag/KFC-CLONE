@@ -12,14 +12,33 @@ import {
 } from "@chakra-ui/react";
 
 
-import React from "react";
+import React, { useContext } from "react";
 import vfc_logo from "../Assets/images/vfc_logo.png";
 import SubTotal from "../Components/SubTotal";
 import { NavLink } from "react-router-dom";
 import { useToast } from '@chakra-ui/react'
+import { CartContext } from './../Context/CartContext/CartContext';
 
 const Payment = () => {
   const toast = useToast()
+const { state, dispatch } = useContext(CartContext);
+
+const handlePayment = () => {
+ dispatch({type:"resetCart"})
+  toast({
+    position: 'bottom',
+    status: 'success',
+    isClosable: true,
+    duration: 9000,
+    render: () => (
+      <Box p="10px 20px" color='white' bg='#e4002b' borderRadius="10px">
+        <b>Order Successfull</b><br />
+        <b>we will serve you within 15 minutes</b>
+      </Box>
+    ),
+  })
+}
+
   return (
     <Box  margin="30px auto">
       {/* <SubTotal/> */}
@@ -105,20 +124,10 @@ const Payment = () => {
             </Flex>
           </Radio>
           <hr />
-       <><NavLink to="/" ><Box w="100%" onClick={() =>
-        toast({
-          position: 'bottom',
-          status: 'success',
-          isClosable: true,
-          duration: 9000,
-          render: () => (
-            <Box p="10px 20px" color='white' bg='#e4002b' borderRadius="10px">
-              <b>Order Successfull</b><br />
-              <b>we will serve you within 15 minutes</b>
-            </Box>
-          ),
-        })
-      }  className="btn_pill">Pay your bill</Box></NavLink></>
+       <><NavLink to="/" >
+        <Box w="100%" onClick={handlePayment
+      }  className="btn_pill">Pay your bill</Box>
+      </NavLink></>
         </RadioGroup>
       </Flex>
     </Box>
@@ -126,3 +135,6 @@ const Payment = () => {
 };
 
 export default Payment;
+
+
+
