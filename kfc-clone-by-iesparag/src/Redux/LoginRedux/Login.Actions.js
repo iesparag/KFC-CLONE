@@ -26,5 +26,5 @@ export const resetLogin = () => async (dispatch) => {
 };
 
 export const logout = () => async (dispatch) => {
-  dispatch({ type: LOGOUT });
+  dispatch({ type: LOGOUT })
 };

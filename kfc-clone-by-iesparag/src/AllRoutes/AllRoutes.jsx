@@ -44,6 +44,7 @@ const AllRoutes = () => {
            </PrivateRoute>
         }
       ></Route>
+   
 
       
       <Route path="/menu/hotDeals" element={<HotDeals />}></Route>
